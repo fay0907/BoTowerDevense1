@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerOnMous : MonoBehaviour
+public class TowerButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] towers;
     public bool mouseHasTower = false;
@@ -11,7 +9,7 @@ public class TowerOnMous : MonoBehaviour
     {
         if (!mouseHasTower)
         {
-            mouseHasTower  = true;
+            mouseHasTower = true;
             Instantiate(towers[towerNumber]);
         }
     }
