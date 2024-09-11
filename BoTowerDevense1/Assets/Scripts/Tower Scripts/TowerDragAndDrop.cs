@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class draggableObject : MonoBehaviour
 {
-    bool isDraggable = false;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    private GameObject towerControll;
+    private TowerButton aaa;
+
+    bool isDraggable = true;
+    // private TowerButton TowerButton;
+
+    private void Start()
+    {
+        towerControll = GameObject.Find("TowerButtons");
+        aaa = towerControll.GetComponent<TowerButton>();   
+    }
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         if (isDraggable)
         {
-            print(isDraggable);
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = new Vector3(mousePosition.x, mousePosition.y, 0);
         }
     }
     private void OnMouseDown()
     {
-        isDraggable = true;
-    }
-    private void OnMouseUp()
-    {
-        isDraggable = false;
+        if (Input.mousePosition.x > 350 || Input.mousePosition.y > 250) { isDraggable = false; aaa.mouseHasTower = false; }
+        print(Input.mousePosition.y);
+        //TowerButton.mouseHasTower = false;
     }
 }

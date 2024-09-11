@@ -9,8 +9,11 @@ public class TowerButton : MonoBehaviour
     {
         if (!mouseHasTower)
         {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Instantiate(towers[towerNumber], mousePosition, Quaternion.identity);
             mouseHasTower = true;
-            Instantiate(towers[towerNumber]);
+            Debug.Log("blaasssss");
         }
     }
 }
