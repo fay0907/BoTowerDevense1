@@ -1,5 +1,5 @@
 using UnityEngine;
-public class draggableObject : MonoBehaviour
+public class TowerDragandDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     private GameObject towerControll;
