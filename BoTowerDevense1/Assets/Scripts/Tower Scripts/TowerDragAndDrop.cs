@@ -14,7 +14,7 @@ public class TowerDragandDrop : MonoBehaviour
         aaa = towerControll.GetComponent<TowerButton>();   
     }
     void Update()
-    {
+    { 
 
         if (isDraggable)
         {
