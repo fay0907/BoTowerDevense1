@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; 
-    public Transform[] spawnPoints; 
+    public GameObject enemyPrefab;
+    public Transform[] spawnPoints;
 
     public int enemiesPerWave = 5;
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 60f;
 
     private int waveCount = 0;
     private float nextWaveTime = 0f;

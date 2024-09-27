@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 1385126105158960526}
   - component: {fileID: -8672808453094828006}
   - component: {fileID: 3391925576504118495}
-  - component: {fileID: -1910818798094786328}
+  - component: {fileID: -5760155938714601360}
   m_Layer: 0
   m_Name: Tower0
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4880662514315584474
 Transform:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
---- !u!114 &-1910818798094786328
+--- !u!114 &-5760155938714601360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8626863394102080077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa3b6bfd1ba02d4cad714365ae96ed3, type: 3}
+  m_Script: {fileID: 11500000, guid: a6d592d7c4402e84da0f6333f3c2c540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100

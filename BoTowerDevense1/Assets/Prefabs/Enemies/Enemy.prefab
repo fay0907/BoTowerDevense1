@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3651230775519806208}
   - component: {fileID: 8137620735620590265}
-  - component: {fileID: 4096485359013062360}
   - component: {fileID: 7204283071500227331}
+  - component: {fileID: 8291793392852610246}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8729049081666507638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 959.9927, y: 540, z: 0}
+  m_LocalScale: {x: 0.9854, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4096485359013062360
+--- !u!114 &7204283071500227331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729049081666507638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a549f748b7c6ce468349c09238ea249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  projectilePrefab: {fileID: 8026250487349429914, guid: a7b1549a51049704d9c9bf8bb59678b5, type: 3}
+  firePoint: {fileID: 4880662514315584474, guid: b877c99d0d01d3e44a54b1a467616848, type: 3}
+--- !u!58 &8291793392852610246
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,24 +130,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &7204283071500227331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8729049081666507638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a549f748b7c6ce468349c09238ea249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  projectilePrefab: {fileID: 7635493218601093693, guid: bb0840e8a98dc434091b5f9939bf30d5, type: 3}
-  firePoint: {fileID: 0}
+  m_Radius: 1

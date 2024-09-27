@@ -2,41 +2,56 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 3f;
-    public GameObject projectilePrefab; 
-    public Transform firePoint; 
+    public float damage = 10f;
+    public float attackRange = 1.5f;
+    public float moveSpeed = 3f;
 
-    private float fireRate = 2f; 
-    private float nextFireTime = 0f;
-
-    private Transform player;
+    private GameObject target;
+    private bool isAttacking = false;
 
     void Start()
     {
-        player = GameObject.FindWithTag("Tower").transform;
+        target = GameObject.FindGameObjectWithTag("Tower");
+        Debug.Log("Target gevonden");
     }
 
     void Update()
     {
-        if (player != null)
+        if (target != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
+            MoveTowardsTarget();
 
-        if (Time.time > nextFireTime)
-        {
-            ShootProjectile();
-            nextFireTime = Time.time + fireRate;
+            float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+            if (distanceToTarget <= attackRange && !isAttacking)
+            {
+                isAttacking = true;
+                AttackTarget();
+                Debug.Log("Aan het aanvallen"); //!!
+            }
         }
     }
 
-    void ShootProjectile()
+    void MoveTowardsTarget()
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
-        if (projectileScript != null)
+        Vector3 direction = (target.transform.position - transform.position).normalized;
+        transform.position += direction * moveSpeed * Time.deltaTime;
+    }
+
+    void AttackTarget()
+    {
+        Health targetHealth = target.GetComponent<Health>();
+
+        if (targetHealth != null)
         {
-            projectileScript.SetDirection((player.position - transform.position).normalized);
+            targetHealth.TakeDamage(damage);
         }
+
+        Invoke("ResetAttack", 1f);
+    }
+
+    void ResetAttack()
+    {
+        isAttacking = false;
+        Debug.Log("Niet Aan het aanvallen"); //!!
     }
 }
