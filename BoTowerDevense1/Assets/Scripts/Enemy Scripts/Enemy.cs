@@ -6,6 +6,10 @@ public class Enemy : MonoBehaviour
     public float attackRange = 1.5f;
     public float moveSpeed = 3f;
 
+    public GameObject bulletPrefab;  
+    public Transform firePoint;      
+    public float bulletSpeed = 5f;
+
     private GameObject target;
     private bool isAttacking = false;
 
@@ -21,30 +25,29 @@ public class Enemy : MonoBehaviour
         {
             MoveTowardsTarget();
 
-            float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+            float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
             if (distanceToTarget <= attackRange && !isAttacking)
             {
                 isAttacking = true;
-                AttackTarget();
-                Debug.Log("Aan het aanvallen"); //!!
+                ShootAtTarget();
+                Debug.Log("Aan het aanvallen");
             }
         }
     }
 
     void MoveTowardsTarget()
     {
-        Vector3 direction = (target.transform.position - transform.position).normalized;
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        Vector2 direction = ((Vector2)target.transform.position - (Vector2)transform.position).normalized;
+        transform.position = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
     }
 
-    void AttackTarget()
-    {
-        Health targetHealth = target.GetComponent<Health>();
 
-        if (targetHealth != null)
-        {
-            targetHealth.TakeDamage(damage);
-        }
+    void ShootAtTarget()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Vector2 direction = ((Vector2)target.transform.position - (Vector2)firePoint.position).normalized;
+
+        bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 
         Invoke("ResetAttack", 1f);
     }
@@ -52,6 +55,6 @@ public class Enemy : MonoBehaviour
     void ResetAttack()
     {
         isAttacking = false;
-        Debug.Log("Niet Aan het aanvallen"); //!!
+        Debug.Log("Niet aan het aanvallen");
     }
 }
