@@ -26,7 +26,6 @@ public class TowerDragandDrop : MonoBehaviour
     private void OnMouseDown()
     {
         if (Input.mousePosition.x > 350 || Input.mousePosition.y > 250) { isDraggable = false; aaa.mouseHasTower = false; }
-        print(Input.mousePosition.y);
         //TowerButton.mouseHasTower = false;
     }
 }

@@ -14,4 +14,5 @@ public class PanalButton : MonoBehaviour
             menuPanel.SetActive(false); // Zorg ervoor dat het menu verborgen is bij de start
         }
     } 
+
 }

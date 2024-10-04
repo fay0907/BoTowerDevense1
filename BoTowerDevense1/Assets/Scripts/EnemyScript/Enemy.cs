@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Tower");
+        target = GameObject.FindGameObjectWithTag("cat");
         Debug.Log("Target gevonden");
     }
 
@@ -37,8 +37,9 @@ public class Enemy : MonoBehaviour
 
     void MoveTowardsTarget()
     {
-        Vector2 direction = ((Vector2)target.transform.position - (Vector2)transform.position).normalized;
-        transform.position = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
+        Vector3 direction = (target.transform.position - transform.position);
+       // transform.position = transform.position + direction * moveSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
     }
 
 

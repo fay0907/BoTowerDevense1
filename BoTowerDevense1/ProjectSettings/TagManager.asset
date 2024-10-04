@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tower
   - Enemy
+  - cat
   layers:
   - Default
   - TransparentFX
