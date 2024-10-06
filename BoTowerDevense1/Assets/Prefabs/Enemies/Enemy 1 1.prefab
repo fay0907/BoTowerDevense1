@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 249196236494876287}
   - component: {fileID: 6965175528523615405}
   - component: {fileID: 6822162800110480023}
+  - component: {fileID: 7602360003453874036}
   m_Layer: 0
   m_Name: Enemy 1 1
   m_TagString: Enemy
@@ -99,12 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a549f748b7c6ce468349c09238ea249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  attackRange: 10
-  moveSpeed: 3
-  bulletPrefab: {fileID: 8026250487349429914, guid: a7b1549a51049704d9c9bf8bb59678b5, type: 3}
-  firePoint: {fileID: 1191037428328486446}
-  bulletSpeed: 5
+  hp: 2
+  speed: 1
 --- !u!58 &6822162800110480023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,12 +131,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.75
+--- !u!50 &7602360003453874036
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823337216053882164}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8559662338156411995
 GameObject:
   m_ObjectHideFlags: 0

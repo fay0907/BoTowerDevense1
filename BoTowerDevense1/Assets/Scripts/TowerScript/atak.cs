@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerAttack : MonoBehaviour
+public class atak : MonoBehaviour
 {
     private List<GameObject> enemies = new List<GameObject>();
-
+    projectilequeue pool;
     private float atkspd = 1;
     internal int damage = 1;
+    internal int range = 5;
     private bool attackcheck = false;
-  
+    // Start is called before the first frame update
+    void Start()
+    {
+        pool = GetComponent<projectilequeue>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
@@ -23,6 +29,7 @@ public class TowerAttack : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("colide");
         if (enemies.Contains(collision.gameObject))
         {
             enemies.Remove(collision.gameObject);
@@ -41,9 +48,7 @@ public class TowerAttack : MonoBehaviour
                 continue; // Skip to the next iteration
             }
 
-            Debug.Log("Attacking");
-
-            // Perform attack logic here
+            pool.Remove();
 
             yield return new WaitForSeconds(atkspd);
         }
