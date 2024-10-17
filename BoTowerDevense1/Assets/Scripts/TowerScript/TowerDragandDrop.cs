@@ -2,6 +2,7 @@ using UnityEngine;
 public class TowerDragandDrop : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] int towercost;
     private GameObject towerControll;
     private TowerButton aaa;
 
@@ -11,10 +12,10 @@ public class TowerDragandDrop : MonoBehaviour
     private void Start()
     {
         towerControll = GameObject.Find("TowerButtons");
-        aaa = towerControll.GetComponent<TowerButton>();   
+        aaa = towerControll.GetComponent<TowerButton>();
     }
     void Update()
-    { 
+    {
 
         if (isDraggable)
         {
@@ -25,7 +26,10 @@ public class TowerDragandDrop : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (Input.mousePosition.x > 350 || Input.mousePosition.y > 250) { isDraggable = false; aaa.mouseHasTower = false; }
-        //TowerButton.mouseHasTower = false;
+        Debug.Log("test");
+        Money.moneyvalue -= towercost;
+        if (Input.mousePosition.x > 350 || Input.mousePosition.y > 250) {  isDraggable = false; aaa.mouseHasTower = false;
+           //TowerButton.mouseHasTower = false;
+        }
     }
 }

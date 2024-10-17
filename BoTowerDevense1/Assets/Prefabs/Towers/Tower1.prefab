@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
+  towercost: 200
 --- !u!114 &7873638582038153926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa3b6bfd1ba02d4cad714365ae96ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  range: 5
 --- !u!114 &6564799207370790139
 MonoBehaviour:
   m_ObjectHideFlags: 0

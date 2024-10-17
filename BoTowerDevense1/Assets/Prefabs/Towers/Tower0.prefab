@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
+  towercost: 100
 --- !u!114 &8048510869949468384
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class atak : MonoBehaviour
     private float atkspd = 1;
     public int damage = 10;
     public int range = 5;
+    private int moneyadded = 10;
     private bool attackcheck = false;
 
     void Start()
@@ -40,12 +41,13 @@ public class atak : MonoBehaviour
 
         while (enemies.Count > 0)
         {
+
             if (enemies[0] == null)
             {
                 enemies.RemoveAt(0);
                 continue; 
             }
-
+            Money.moneyvalue += moneyadded;
             pool.Remove();
 
             yield return new WaitForSeconds(atkspd);

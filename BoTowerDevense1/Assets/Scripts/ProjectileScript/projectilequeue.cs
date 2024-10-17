@@ -6,7 +6,8 @@ using UnityEngine;
 public class projectilequeue : MonoBehaviour
 {
     public GameObject prefag;
-    [SerializeField] internal Queue<GameObject> queue = new Queue<GameObject>();
+    [SerializeField] internal Queue<GameObject> queue = new Queue<GameObject>(); 
+
 
     void Start()
     {
@@ -16,19 +17,20 @@ public class projectilequeue : MonoBehaviour
         }
     }
 
-    private void Instantiator()
+    private void Instantiator()     
     {
         GameObject projectile = Instantiate(prefag, transform);
         queue.Enqueue(projectile);
         projectile.SetActive(false);
     }
 
-    internal void Remove() //use when needing a projectile
+    internal void Remove() 
     {
         GameObject projectile = queue.Dequeue();
         projectile.SetActive(true);
     }
-    internal void Add(GameObject projectile, Transform towerposition) //use at end of projectiles life to add it to the pool
+
+    internal void Add(GameObject projectile, Transform towerposition)
     {
         queue.Enqueue(projectile);
         projectile.transform.position = towerposition.position;
