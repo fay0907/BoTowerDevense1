@@ -7,10 +7,14 @@ public class projectilequeue : MonoBehaviour
 {
     public GameObject prefag;
     [SerializeField] internal Queue<GameObject> queue = new Queue<GameObject>(); 
+    [SerializeField] private AudioSource Meow;
+    float timeelapsed;
 
 
     void Start()
     {
+
+        Meow = GetComponent<AudioSource>();
         for (int i = 0; i < 6; i++)
         {
             Instantiator();
@@ -20,6 +24,7 @@ public class projectilequeue : MonoBehaviour
     private void Instantiator()     
     {
         GameObject projectile = Instantiate(prefag, transform);
+        Meow.Play();
         queue.Enqueue(projectile);
         projectile.SetActive(false);
     }
@@ -27,6 +32,7 @@ public class projectilequeue : MonoBehaviour
     internal void Remove() 
     {
         GameObject projectile = queue.Dequeue();
+        
         projectile.SetActive(true);
     }
 
@@ -35,5 +41,15 @@ public class projectilequeue : MonoBehaviour
         queue.Enqueue(projectile);
         projectile.transform.position = towerposition.position;
         projectile.SetActive(false);
+    }
+
+    private void Update()
+    {
+        timeelapsed += Time.deltaTime;
+        if (timeelapsed > 5)
+        {
+            Meow.Stop();
+            timeelapsed = 0;
+        }
     }
 }
