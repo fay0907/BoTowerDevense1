@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a549f748b7c6ce468349c09238ea249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monnyremoved: 15
   hp: 10
   speed: 1
 --- !u!58 &1637757679051761448
@@ -167,7 +168,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!50 &3853324275472344817
 Rigidbody2D:
   serializedVersion: 4

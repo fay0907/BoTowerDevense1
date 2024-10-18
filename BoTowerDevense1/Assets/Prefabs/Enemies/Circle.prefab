@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a549f748b7c6ce468349c09238ea249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monnyremoved: 10
   hp: 8
   speed: 3
 --- !u!58 &7743531744993858545

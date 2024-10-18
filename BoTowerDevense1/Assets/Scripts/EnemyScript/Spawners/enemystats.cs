@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class enemystats : MonoBehaviour
 {
     private Transform target;
-    private int monnyremoved = 10;
+    public int monnyremoved = 10;
     public int hp = 2;
     public int speed = 6;
 

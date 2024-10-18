@@ -572,7 +572,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 2
 --- !u!50 &5052727449280060191
 Rigidbody2D:
   serializedVersion: 4
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa3b6bfd1ba02d4cad714365ae96ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkspd: 5
+  atkspd: 3
   damage: 15
   range: 8
 --- !u!114 &6564799207370790139
