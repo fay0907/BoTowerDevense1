@@ -37,7 +37,7 @@ public class Money : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
 
-        if (moneyvalue >= 600)
+        if (moneyvalue >= 1000)
         {
             WinnOverPanel.SetActive(true);
         }

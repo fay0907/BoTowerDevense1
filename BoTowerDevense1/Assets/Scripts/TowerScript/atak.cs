@@ -6,7 +6,7 @@ public class atak : MonoBehaviour
 {
     private List<GameObject> enemies = new List<GameObject>();
     projectilequeue pool;
-    private float atkspd = 1;
+    public float atkspd = 1;
     public int damage = 10;
     public int range = 5;
     private int moneyadded = 10;

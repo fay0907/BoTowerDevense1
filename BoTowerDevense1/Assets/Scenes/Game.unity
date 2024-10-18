@@ -1617,6 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643960601}
   - component: {fileID: 643960600}
+  - component: {fileID: 643960602}
   m_Layer: 0
   m_Name: Square
   m_TagString: Vis
@@ -1691,6 +1692,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2063096805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &643960602
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643960599}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000005041336, y: -0.0000003297482}
+  serializedVersion: 2
+  m_Radius: 0.2672164
 --- !u!1 &663346504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3304,7 @@ MonoBehaviour:
   - {fileID: 534303529}
   - {fileID: 936011978}
   - {fileID: 2024932794}
-  enemiesPerWave: 5
+  enemiesPerWave: 7
   timeBetweenWaves: 15
 --- !u!1 &1591219331
 GameObject:
@@ -3655,6 +3691,7 @@ MonoBehaviour:
   towers:
   - {fileID: 8626863394102080077, guid: b877c99d0d01d3e44a54b1a467616848, type: 3}
   - {fileID: 6910529674757922513, guid: 4a6a4ec4b5edaad429cbf2d035cc09ba, type: 3}
+  towercost: 200
   mouseHasTower: 0
 --- !u!1 &1918240254
 GameObject:

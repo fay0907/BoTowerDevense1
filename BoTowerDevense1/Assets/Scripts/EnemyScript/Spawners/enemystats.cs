@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class enemystats : MonoBehaviour
 {
     private Transform target;
+    private int monnyremoved = 10;
     public int hp = 2;
     public int speed = 6;
 
@@ -15,6 +16,15 @@ public class enemystats : MonoBehaviour
         if (target == null)
         {
             Debug.Log("Vis Gevonden.");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.tag == "Vis")
+        {
+            Money.moneyvalue -= monnyremoved;
+            Destroy(gameObject);
         }
     }
 
